@@ -1,0 +1,30 @@
+<div class="main-container md:p-4 p-3">
+  <h1>Upload File</h1>
+  <div
+    class="drop-box flex flex-column justify-content-center align-items-center m-auto"
+    appDragAndDrop
+    (filesChangeEmiter)="onFileChange($event)"
+    (fileDropped)="onFileChange($event)"
+    (click)="fileDropRef.click()"
+  >
+    <mat-icon style="font-size: 24px" fontIcon="upload_file"></mat-icon>
+    <p>Choose a file.</p>
+    <input
+      type="file"
+      id="fileDropRef"
+      accept=".jpg, .jpeg, .pdf"
+      (change)="onFileChange($event)"
+      #fileDropRef
+    />
+  </div>
+  <div class="flex align-items-center my-3 w-full justify-content-between" *ngIf="fileToUpload">
+    <p>Uploaded File: {{fileName}}</p>
+    <button mat-icon-button (click)="removeFile()">
+        <mat-icon>delete</mat-icon>
+      </button>
+</div>
+  <div class="mt-4 flex gap-3">
+    <button mat-raised-button color="primary">Confirm</button>
+    <button (click)="onCancel()" mat-raised-button>Cancel</button>
+  </div>
+</div>

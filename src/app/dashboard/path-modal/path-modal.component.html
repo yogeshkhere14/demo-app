@@ -1,0 +1,25 @@
+<div class="main-container md:p-4 p-3">
+  <h1>Create Path Directory</h1>
+  <div class="flex flex-column">
+    <p class="mat-body">Path:</p>
+    <p class="mat-body font-bold">csg-project</p>
+  </div>
+
+  <div class="flex flex-column md:flex-row mt-4">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua
+    </p>
+    <div class="dense-3 mt-3 md:mt-0">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Path</mat-label>
+        <input [(ngModel)]="pathName" matInput placeholder="Ex. path" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="mt-4 flex gap-3">
+    <button mat-raised-button (click)="onUpdate()" color="primary">Confirm</button>
+    <button (click)="onCancel()" mat-raised-button >Cancel</button>
+  </div>
+</div>

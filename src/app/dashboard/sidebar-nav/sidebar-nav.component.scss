@@ -1,0 +1,51 @@
+.main-container{
+    background-color: #031525;
+    padding: 14px;
+    max-width: 360px;
+    .toggle-icon{
+        .icon-2x {
+            transform: scale(2);
+        }
+        
+        .icon-3x {
+            transform: scale(3);
+        }
+    }
+    .top-bar{
+        .logo{
+            border-radius: 8px;
+            height: 40px;
+            width: 40px;
+            background-color: white;
+            p{
+                color: #031525;
+            }
+        }
+        .project{
+            color: #B4B4B8;
+        }
+    }
+}
+
+.mat-h1, .mat-h2, .mat-h3{
+    margin: 0px;
+}
+
+.text-color{
+    color: #B4B4B8 !important;
+    margin: 0px;
+}
+
+
+::ng-deep md-sidenav.md-locked-open {
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+  }
+::ng-deep md-sidenav, 
+md-sidenav.md-locked-open, 
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 0px !important;
+    width: auto !important;
+    max-width: none !important;
+}

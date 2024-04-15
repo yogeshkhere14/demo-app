@@ -1,0 +1,53 @@
+<div class="main-container h-screen">
+  <div class="flex top-bar align-items-center gap-2">
+    <div
+      class="flex logo justify-content-center align-items-center cursor-pointer"
+      *ngIf="isOpened"
+    >
+      <p class="mat-h2">CF</p>
+    </div>
+    <div class="project cursor-pointer" *ngIf="isOpened">
+      <p class="mat-h2 text-color">CSG Project</p>
+    </div>
+    <div class="toggle-icon" *ngIf="!isMobile">
+      <button mat-icon-button (click)="onIconToggle()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="dashbord icon"
+          class="text-color cursor-pointer"
+          [ngClass]="isOpened ? 'icon-2x' : 'icon-3x'"
+          [fontIcon]="isOpened ? 'chevron_left' : 'chevron_right'"
+        ></mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="flex flex-column justify-content-between mt-5">
+    <div class="flex align-items-center gap-2">
+      <button mat-icon-button (click)="onIconToggle()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="dashbord icon"
+          class="text-color cursor-pointer"
+          fontIcon="home"
+        ></mat-icon>
+      </button>
+
+      <h2 class="mat-h3 text-color cursor-pointer" *ngIf="isOpened">
+        Dashboard
+      </h2>
+    </div>
+
+    <div class="flex align-items-center gap-2 mt-2" (click)="onLogout()">
+      <button mat-icon-button (click)="onIconToggle()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="dashbord icon"
+          class="text-color cursor-pointer"
+          fontIcon="logout"
+        ></mat-icon>
+      </button>
+
+      <h2 class="mat-h3 text-color cursor-pointer" *ngIf="isOpened">Logout</h2>
+    </div>
+  </div>
+</div>

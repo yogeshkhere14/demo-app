@@ -1,0 +1,25 @@
+.login-container {
+    background: #fff;
+    height: 100vh;
+
+    .login {
+        max-width: 320px;
+
+        @media only screen and (max-width: 420px) {
+            max-width: 100%;
+            padding: 0px 10px;
+        }
+
+        .logo {
+            width: 320px;
+
+            @media only screen and (max-width: 420px) {
+                width: 100%;
+            }
+        }
+
+        .error-message{
+            color: #e24c4c;
+        }
+    }
+}

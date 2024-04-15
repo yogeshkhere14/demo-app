@@ -1,0 +1,65 @@
+<div
+  class="login-container flex flex-column align-items-center justify-content-center px-2 md:px-0"
+>
+  <div class="login">
+    <div
+      class="flex flex-column justify-content-center align-items-center"
+    ></div>
+    <div class="top-design flex flex-column align-items-center">
+      <h1 class="text-color">Welcome Back!</h1>
+      <p class="mt-2 text-color">Login to your account</p>
+    </div>
+    <div class="border my-4"></div>
+    <form [formGroup]="loginForm">
+      <mat-form-field class="w-full dense-2" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="Ex. pat@example.com"
+        />
+        <mat-error
+          *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')"
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-full dense-2" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          formControlName="password"
+          laceholder="******"
+        />
+        <mat-error
+          *ngIf="loginForm.hasError('email') && !loginForm.hasError('required')"
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="w-full"
+          (click)="onSubmit()"
+          [class.spinner]="loading"
+          [disabled]="loading"
+        >
+          Login
+        </button>
+      </div>
+      <div class="error-message mt-2" *ngIf="invalidCredentials">
+        Invalid user credentials
+      </div>
+    </form>
+  </div>
+</div>
