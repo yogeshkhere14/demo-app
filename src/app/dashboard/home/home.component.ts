@@ -63,7 +63,9 @@ export class HomeComponent {
       exitAnimationDuration,
     });
     dailog.afterClosed().subscribe(result => {
-      this.dataSource = new MatTableDataSource(result);
+      if(result){
+        this.dataSource = new MatTableDataSource(result);
+      }
     });
   }
   openUploadDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
